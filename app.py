@@ -70,7 +70,7 @@ def makeWebhookResult(req):
 		
 		url_list.append(place.url)
 		lat_long_list.append(place.geo_location)
-		speech = "please click the urls " + url_list 
+		speech = "please click the urls " + url_list [1]
 #		print place.name
 #		print place.geo_location
 #		print place.place_id
