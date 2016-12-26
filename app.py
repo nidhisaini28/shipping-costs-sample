@@ -48,15 +48,14 @@ def makeWebhookResult(req):
 # will be send as type param to fullfil:
 # http://googlegeodevelopers.blogspot.com.au/2016/02/changes-and-quality-improvements-in_16.html
 
-    if query_result.has_attributions:
-	print query_result.html_attributions
-
+    
 	
     url_list=[]
     location_list=[]
     for place in query_result.places:
         url_list.append(place.url)
 	location_list.append(place.geo_location)
+	
     speech = "please click the urls "
 #		print place.name
 #		print place.geo_location
