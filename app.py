@@ -38,39 +38,26 @@ def makeWebhookResult(req):
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-#    zone = parameters.get("shipping-zone")
-
-	bank_name = parameters.get("bank")
-	location_name = parameters.get("location")
-	
-
-#    cost = {'Europe':1000, 'North America':20, 'South America':3000, 'Asia':4000, 'Africa':5000}
-#
-#    speech = "The cost of shipping to " + zone + " is " + str(cost[zone]) + " euros."
-#
-#    print("Response:")
-#    print(speech)
-
+    bank_name = parameters.get("bank")
+    location_name = parameters.get("location")
 # You may prefer to use the text_search API, instead.
-	query_result = google_places.nearby_search(
-        location=location_name, keyword=bank_name,
-        radius=2000, types=[types.TYPE_BANK])
+    query_result = google_places.nearby_search(
+    location=location_name, keyword=bank_name,
+    radius=2000, types=[types.TYPE_BANK])
 # If types param contains only 1 item the request to Google Places API
 # will be send as type param to fullfil:
 # http://googlegeodevelopers.blogspot.com.au/2016/02/changes-and-quality-improvements-in_16.html
 
-	if query_result.has_attributions:
-		print query_result.html_attributions
+    if query_result.has_attributions:
+	print query_result.html_attributions
 
 	
-	url_list=[]
-	lat_long_list=[]
+    url_list=[]
+    lat_long_list=[]
 	for place in query_result.places:
-    # Returned places from a query are place summaries.
-		
-		url_list.append(place.url)
-		lat_long_list.append(place.geo_location)
-		speech = "please click the urls " + url_list [1]
+	    url_list.append(place.url)
+	    lat_long_list.append(place.geo_location)
+	speech = "please click the urls " + url_list [1]
 #		print place.name
 #		print place.geo_location
 #		print place.place_id
