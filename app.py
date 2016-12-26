@@ -65,7 +65,7 @@ def makeWebhookResult(req):
     # Returned places from a query are place summaries.
         url_list.append(place.url)
         lat_long_list.append(place.geo_location)
-        speech = "please click the urls " + url_list[1] 
+    speech = "please click the urls " + url_list[1] 
 #		print place.name
 #		print place.geo_location
 #		print place.place_id
