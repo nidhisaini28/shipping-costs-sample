@@ -93,7 +93,8 @@ def makeWebhookResult(req):
 #        photo.filename
 #        # Raw image data
 #        photo.data
-
+    print("Response:")
+    print(speech)
 
     return {
         "speech": speech,
