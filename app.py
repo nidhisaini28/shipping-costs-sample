@@ -10,9 +10,9 @@ from googleplaces import GooglePlaces, types, lang
 # Flask app should start in global layout
 app = Flask(__name__)
 
-YOUR_API_KEY = 'AIzaSyDFYyH5YoKVlY0BmbFUl5YLU3NGy6POKl8'
+#YOUR_API_KEY = 'AIzaSyDFYyH5YoKVlY0BmbFUl5YLU3NGy6POKl8'
 
-google_places = GooglePlaces(YOUR_API_KEY)
+#google_places = GooglePlaces(YOUR_API_KEY)
 
 
 
@@ -32,7 +32,7 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "geo-map":
+    if req.get("result").get("action") != "shipping.cost":
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
