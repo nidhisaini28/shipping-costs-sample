@@ -39,7 +39,7 @@ def makeWebhookResult(req):
 #    zone = parameters.get("shipping-zone")
 
     bank_name = parameters.get("bank")
-    location_name = parameters.get("location")
+    location_name = parameters.get("address")
 	
 
 #    cost = {'Europe':1000, 'North America':20, 'South America':3000, 'Asia':4000, 'Africa':5000}
