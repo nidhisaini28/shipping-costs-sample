@@ -5,15 +5,9 @@ import os
 from flask import Flask
 from flask import request
 from flask import make_response
-from googleplaces import GooglePlaces, types, lang
 
 # Flask app should start in global layout
 app = Flask(__name__)
-
-YOUR_API_KEY = 'AIzaSyDFYyH5YoKVlY0BmbFUl5YLU3NGy6POKl8'
-
-google_places = GooglePlaces(YOUR_API_KEY)
-
 
 
 @app.route('/webhook', methods=['POST'])
@@ -32,68 +26,16 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "geo-map":
+    if req.get("result").get("action") != "shipping.cost":
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-#    zone = parameters.get("shipping-zone")
+    zone = parameters.get("shipping-zone")
 
-    bank = parameters.get("bank")
-    address = parameters.get("address")
-	
+    cost = {'Europe':900, 'North America':1200, 'South America':1300, 'Asia':1400, 'Africa':1500}
 
-#    cost = {'Europe':1000, 'North America':20, 'South America':3000, 'Asia':4000, 'Africa':5000}
-#
-#    speech = "The cost of shipping to " + zone + " is " + str(cost[zone]) + " euros."
-#
-#    print("Response:")
-#    print(speech)
+    speech = "The cost of shipping to " + zone + " is " + str(cost[zone]) + " euros."
 
-# You may prefer to use the text_search API, instead.
-
-    query_result = google_places.nearby_search(location=address, keyword=bank,radius=2000, types=[types.TYPE_BANK])
-
-# If types param contains only 1 item the request to Google Places API
-# will be send as type param to fullfil:
-# http://googlegeodevelopers.blogspot.com.au/2016/02/changes-and-quality-improvements-in_16.html
-
-	
-	
-    url_list=[]
-    lat_long_list=[]
-    for place in query_result.places:
-	place.get_details()
-    # Returned places from a query are place summaries.
-        url_list.append(place.url)
-        lat_long_list.append(place.geo_location)
-    speech = "please click the urls " + bank + address
-#		print place.name
-#		print place.geo_location
-#		print place.place_id
-#
-#		# The following method has to make a further API call.
-#		place.get_details()
-#		# Referencing any of the attributes below, prior to making a call to
-#		# get_details() will raise a googleplaces.GooglePlacesAttributeError.
-#		print place.details # A dict matching the JSON response from Google.
-#		print place.local_phone_number
-#		print place.international_phone_number
-#		print place.website
-#		print place.url
-
-    # Getting place photos
-
-#    for photo in place.photos:
-#        # 'maxheight' or 'maxwidth' is required
-#        photo.get(maxheight=500, maxwidth=500)
-#        # MIME-type, e.g. 'image/jpeg'
-#        photo.mimetype
-#        # Image URL
-#        photo.url
-#        # Original filename (optional)
-#        photo.filename
-#        # Raw image data
-#        photo.data
     print("Response:")
     print(speech)
 
