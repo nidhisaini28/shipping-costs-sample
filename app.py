@@ -38,8 +38,8 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
 #    zone = parameters.get("shipping-zone")
 
-    bank_name = parameters.get("bank")
-    location_name = parameters.get("address")
+    bank = parameters.get("bank")
+    address = parameters.get("address")
 	
 
 #    cost = {'Europe':1000, 'North America':20, 'South America':3000, 'Asia':4000, 'Africa':5000}
@@ -50,7 +50,7 @@ def makeWebhookResult(req):
 #    print(speech)
 
 # You may prefer to use the text_search API, instead.
-    query_result = google_places.nearby_search(location=location_name, keyword=bank_name,radius=2000, types=[types.TYPE_BANK])
+    query_result = google_places.nearby_search(location=address, keyword=bank,radius=2000, types=[types.TYPE_BANK])
 # If types param contains only 1 item the request to Google Places API
 # will be send as type param to fullfil:
 # http://googlegeodevelopers.blogspot.com.au/2016/02/changes-and-quality-improvements-in_16.html
