@@ -50,21 +50,23 @@ def makeWebhookResult(req):
 #    print(speech)
 
 # You may prefer to use the text_search API, instead.
-    query_result = google_places.nearby_search(location=address, keyword=bank,radius=2000, types=[types.TYPE_BANK])
+
+#    query_result = google_places.nearby_search(location=address, keyword=bank,radius=2000, types=[types.TYPE_BANK])
+
 # If types param contains only 1 item the request to Google Places API
 # will be send as type param to fullfil:
 # http://googlegeodevelopers.blogspot.com.au/2016/02/changes-and-quality-improvements-in_16.html
 
 	
 	
-    url_list=[]
-    lat_long_list=[]
-    for place in query_result.places:
-	place.get_details()
+#    url_list=[]
+#    lat_long_list=[]
+#    for place in query_result.places:
+#	place.get_details()
     # Returned places from a query are place summaries.
-        url_list.append(place.url)
-        lat_long_list.append(place.geo_location)
-    speech = "please click the urls " 
+ #       url_list.append(place.url)
+ #       lat_long_list.append(place.geo_location)
+    speech = "please click the urls " + bank + address
 #		print place.name
 #		print place.geo_location
 #		print place.place_id
