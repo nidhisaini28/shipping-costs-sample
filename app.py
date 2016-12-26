@@ -32,8 +32,6 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    YOUR_API_KEY = 'AIzaSyDFYyH5YoKVlY0BmbFUl5YLU3NGy6POKl8'
-    google_places = GooglePlaces(YOUR_API_KEY)
     if req.get("result").get("action") != "geo-map":
         return {}
     result = req.get("result")
