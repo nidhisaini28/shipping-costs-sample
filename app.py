@@ -31,6 +31,9 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
+    YOUR_API_KEY = 'AIzaSyBYYWozzInvfWpbyHZTlGEoJjpkpgn8BSk'
+    google_places = GooglePlaces(YOUR_API_KEY)
+    
     if req.get("result").get("action") != "shipping.cost":
         return {}
     result = req.get("result")
