@@ -41,7 +41,7 @@ def makeWebhookResult(req):
         location='Gurugram, India', keyword='Raasta',
         radius=20000, types=[types.TYPE_FOOD])
     for place in query_result.places:
-        to_print= place.url
+        to_print= str(place.url)
 
 
     speech = "The cost of shipping to " + zone + " is " + address + to_print
