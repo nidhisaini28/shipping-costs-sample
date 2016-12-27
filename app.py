@@ -35,7 +35,7 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     bank = parameters.get("bank")
-    address = parameters.get("address")
+#    address = parameters.get("address")
     
 #    query_result = google_places.nearby_search(location=address, keyword=bank,radius=2000, types=[types.TYPE_BANK])
 #    url_list=[]
