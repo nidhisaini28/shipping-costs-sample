@@ -14,9 +14,7 @@ YOUR_API_KEY = 'AIzaSyBYYWozzInvfWpbyHZTlGEoJjpkpgn8BSk'
 
 google_places = GooglePlaces(YOUR_API_KEY)
 
-query_result = google_places.nearby_search(
-        location= "London, England", keyword="hdfc",
-        radius=20000, types=[types.TYPE_BANK])
+
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
