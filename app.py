@@ -14,6 +14,10 @@ YOUR_API_KEY = 'AIzaSyBYYWozzInvfWpbyHZTlGEoJjpkpgn8BSk'
 
 google_places = GooglePlaces(YOUR_API_KEY)
 
+query_result = google_places.nearby_search(
+        location= "London, England", keyword="hdfc",
+        radius=20000, types=[types.TYPE_BANK])
+
 @app.route('/webhook', methods=['POST'])
 def webhook():
     req = request.get_json(silent=True, force=True)
@@ -36,12 +40,6 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("bank-name")
     address = parameters.get("address")
-    query_result = google_places.nearby_search(
-        location= address, keyword= zone,
-        radius=20000, types=[types.TYPE_BANK])
-
-    #cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
-
     speech = "The cost of shipping to " + zone + " is " + address
 
     print("Response:")
