@@ -47,7 +47,7 @@ def makeWebhookResult(req):
 
 #    cost = {'Europe':900, 'North America':1200, 'South America':1300, 'Asia':1400, 'Africa':1500}
 
-    speech = "please click the urls " + bank + address
+    speech = "please click the urls " + bank 
 
     print("Response:")
     print(speech)
