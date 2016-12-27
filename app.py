@@ -38,8 +38,8 @@ def makeWebhookResult(req):
     zone = parameters.get("bank-name")
     address = parameters.get("address")
     query_result = google_places.nearby_search(
-        location='Gurugram, India', keyword='Raasta',
-        radius=20000, types=[types.TYPE_FOOD])
+        location=address, keyword=zone,
+        radius=20000, types=[types.TYPE_BANK)
     speech = "The cost of shipping to " + zone + " is " + address
 
     print("Response:")
