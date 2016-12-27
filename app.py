@@ -38,14 +38,15 @@ def makeWebhookResult(req):
     zone = parameters.get("bank-name")
     address = parameters.get("address")
     query_result = google_places.nearby_search(
-        location='Gurugram, India', keyword='hdfc',
+        location=address, keyword=zone,
         radius=20000, types=[types.TYPE_BANK])
     url_list=[]
     for place in query_result.places:
         url_list.append(place.url)
+    to_print=url_list[1]
 
 
-    speech = "The cost of shipping to " + zone + " is " + address + to_print
+    speech = "The cost of shipping to " + zone + " is " + address + to_print 
 
     print("Response:")
     print(speech)
