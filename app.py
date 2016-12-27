@@ -31,11 +31,11 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     zone = parameters.get("bank-name")
-    #zone = parameters.get("shipping-zone")
+    address = parameters.get("address")
 
     #cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
 
-    speech = "The cost of shipping to " + zone + " is " 
+    speech = "The cost of shipping to " + zone + " is " + address
 
     print("Response:")
     print(speech)
