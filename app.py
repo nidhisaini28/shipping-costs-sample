@@ -13,9 +13,7 @@ app = Flask(__name__)
 YOUR_API_KEY = 'AIzaSyBYYWozzInvfWpbyHZTlGEoJjpkpgn8BSk'
 
 google_places = GooglePlaces(YOUR_API_KEY)
-#query_result = google_places.nearby_search(location='Gurugram, India', keyword='Raasta',radius=20000, types=[types.TYPE_FOOD])
-#for place in query_result.places:
-    #the_url=place.url
+
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -39,7 +37,11 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("bank-name")
     address = parameters.get("address")
+    query_result = google_places.nearby_search(location='Gurugram, India', keyword='Raasta',radius=20000, types=[types.TYPE_FOOD])
+    for place in query_result.places:
+        the_url=place.url
     speech = "The cost of shipping to " + zone + " is " + address 
+    
 
     print("Response:")
     print(speech)
