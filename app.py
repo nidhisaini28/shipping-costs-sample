@@ -36,6 +36,9 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("bank-name")
     address = parameters.get("address")
+    query_result = google_places.nearby_search(
+        location= address, keyword= zone,
+        radius=20000, types=[types.TYPE_BANK])
 
     #cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
 
