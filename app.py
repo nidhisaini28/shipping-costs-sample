@@ -14,9 +14,6 @@ YOUR_API_KEY = 'AIzaSyBQmK8EEwk-ewv1jbADDYtzN67oCShm5bk'
 
 google_places = GooglePlaces(YOUR_API_KEY)
 
-query_result = google_places.nearby_search(
-        location='London, England', keyword='Fish and Chips',
-        radius=20000, types=[types.TYPE_FOOD])
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
