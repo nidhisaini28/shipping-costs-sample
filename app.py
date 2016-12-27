@@ -5,10 +5,14 @@ import os
 from flask import Flask
 from flask import request
 from flask import make_response
+from googleplaces import GooglePlaces, types, lang
 
 # Flask app should start in global layout
 app = Flask(__name__)
 
+YOUR_API_KEY = 'AIzaSyBYYWozzInvfWpbyHZTlGEoJjpkpgn8BSk'
+
+google_places = GooglePlaces(YOUR_API_KEY)
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
