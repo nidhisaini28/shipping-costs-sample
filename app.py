@@ -34,7 +34,7 @@ def makeWebhookResult(req):
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-    bank = parameters.get("bank")
+ #   bank = parameters.get("bank")
 #    address = parameters.get("address")
     
 #    query_result = google_places.nearby_search(location=address, keyword=bank,radius=2000, types=[types.TYPE_BANK])
@@ -43,11 +43,11 @@ def makeWebhookResult(req):
 #    for place in query_result.places:       
 #        url_list.append(place.url)
 #        lat_long_list.append(place.geo_location)
-#    zone = parameters.get("shipping-zone")
+    zone = parameters.get("shipping-zone")
 
 #    cost = {'Europe':900, 'North America':1200, 'South America':1300, 'Asia':1400, 'Africa':1500}
 
-    speech = "please click the urls " + bank 
+    speech = "please click the urls " 
 
     print("Response:")
     print(speech)
