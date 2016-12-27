@@ -39,7 +39,7 @@ def makeWebhookResult(req):
     address = parameters.get("address")
     query_result = google_places.nearby_search(
         location=address, keyword=zone,
-        radius=20000, types=[types.TYPE_BANK)
+        radius=20000)
     speech = "The cost of shipping to " + zone + " is " + address
 
     print("Response:")
