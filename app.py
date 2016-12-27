@@ -10,7 +10,7 @@ from googleplaces import GooglePlaces, types, lang
 # Flask app should start in global layout
 app = Flask(__name__)
 
-YOUR_API_KEY = 'AIzaSyBYYWozzInvfWpbyHZTlGEoJjpkpgn8BSk'
+YOUR_API_KEY = 'AIzaSyBQmK8EEwk-ewv1jbADDYtzN67oCShm5bk'
 
 google_places = GooglePlaces(YOUR_API_KEY)
 
