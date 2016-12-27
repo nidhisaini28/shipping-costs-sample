@@ -40,7 +40,7 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("bank-name")
     address = parameters.get("address")
-    query_result = google_places.nearby_search(location=address, keyword=zone,radius=2000, types=[types.TYPE_BANK])
+    query_result = google_places.nearby_search(location=gurugram, keyword=HDFC,radius=2000, types=[types.TYPE_BANK])
     speech = "The cost of shipping to " + zone + " is " + address + query_result
     
 
