@@ -41,8 +41,8 @@ def makeWebhookResult(req):
     zone = parameters.get("bank-name")
     address = parameters.get("address")
     #query_result = google_places.text_search("Restaurant in New York", lat_lng ={'lat':40.730610, 'lng':-73.935242}, location='New York, USA', radius=2000, types=[types.TYPE_FOOD])
-    query_result = google_places.nearby_search(location='London, England', lat_lng ={'lat':51.509865, 'lng':-0.118092}, keyword='HDFC',radius=20000, types=[types.TYPE_BANK])
-    speech = "The cost of shipping to " + zone + " is " + address + query_result
+    query_result = google_places.nearby_search(location=address, lat_lng ={'lat':51.509865, 'lng':-0.118092}, keyword=zone,radius=20000, types=[types.TYPE_BANK])
+    speech = "The cost of shipping to " + zone + " is " + address 
     
 
     print("Response:")
