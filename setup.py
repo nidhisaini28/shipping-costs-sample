@@ -7,7 +7,7 @@ from googleplaces import __author__, __email__, __version__
 DESCRIPTION = 'A simple wrapper around the Google Places API.'
 
 setup(
-    name = 'python-google-places',
+    name = 'shipping-costs-sample',
     version = __version__,
     url = 'http://github.com/nidhisaini28/shipping-costs-sample',
     author = __author__,
