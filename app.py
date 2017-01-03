@@ -44,8 +44,8 @@ def makeWebhookResult(req):
         #query_result = google_places.text_search("Restaurant in New York", lat_lng ={'lat':40.730610, 'lng':-73.935242}, location='New York, USA', radius=2000, types=[types.TYPE_FOOD])
         #for place in query_result.places:
          #   para=place.url
-     query_result = google_places.nearby_search(location=address, lat_lng ={'lat':51.509865, 'lng':-0.118092}, keyword=zone,radius=20000, types=[types.TYPE_BANK])
-     for place in query_result.places:
+    query_result = google_places.nearby_search(location=address, lat_lng ={'lat':51.509865, 'lng':-0.118092}, keyword=zone,radius=20000, types=[types.TYPE_BANK])
+    for place in query_result.places:
         para=place.url
     #except:
      #   para = 'empty'
