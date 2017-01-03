@@ -1,4 +1,4 @@
-#How to Provide Replies about Shipping Costs via Api.ai Webhook
+# Api.ai Webhook
 
 This example shows how you can use Api.ai webhook .
 
